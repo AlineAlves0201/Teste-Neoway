@@ -16,7 +16,7 @@ def get_ufs():
     response = requests.get(url, data)
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    # Extract the data from the table
+    # Extraia os dados da tabela
     select = soup.find_all('select', {'class': 'f1col'})
     rows = select[0].find_all('option')
     ufs = []
@@ -30,9 +30,9 @@ def get_ufs():
 def get_content_by_ufs(ufs):
     url = 'https://www2.correios.com.br/sistemas/buscacep/resultadoBuscaFaixaCEP.cfm'
 
-    count = 0  # servira de indice futuramente
+    count = 0  # Servira de indice futuramente
     records = []
-    qtdrow = 50
+    qtdrow = 50 # Quantidades de linhas do site
     for uf in ufs:
         isfindnext = True
         pagini = 1
