@@ -57,6 +57,7 @@ def get_content_by_ufs(ufs):
 
             tableIndex = len(table) - 1
 
+            # Tratamento de erro devido a anomalias no site
             try:
                 rows = table[tableIndex].find_all('tr')
             except:
